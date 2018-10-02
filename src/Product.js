@@ -24,7 +24,7 @@ export default function Product(props){
             onClick = {
               event => {
                 event.preventDefault();
-                 console.log(props.product);
+                //  console.log(props.product);
                props.onAddItemToCart(props.product);
               }
             } >

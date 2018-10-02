@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import Navbar from './Navbar.js';
 import Product from './Product.js';
 import ShoppingCart from './ShoppingCart.js';
-import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
@@ -19,7 +18,7 @@ class App extends Component {
     if(alreadyExist){
       cartItems= cartItems.map(cartItem=>{
         if(cartItem.product.id===product.id){
-          cartItem.quantity= cartItem.quantity+1;
+         cartItem.quantity++;
        
         }
          return cartItem;
@@ -29,8 +28,11 @@ class App extends Component {
       product : product,
       quantity: 1
     });
-    this.setState({cartItems: cartItems});
+   
   };
+   this.setState({
+     cartItems: cartItems
+   });
 
 }
 handleRemoveItemFromCart = product => {
